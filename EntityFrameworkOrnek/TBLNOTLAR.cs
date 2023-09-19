@@ -23,7 +23,7 @@ namespace EntityFrameworkOrnek
         public Nullable<decimal> ORTALAMA { get; set; }
         public Nullable<bool> DURUM { get; set; }
     
-        public virtual Dersler Dersler { get; set; }
+        public virtual TBLOGRENCI Dersler { get; set; }
         public virtual TBLOGRENCI TBLOGRENCI { get; set; }
     }
 }

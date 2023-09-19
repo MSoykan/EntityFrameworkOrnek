@@ -25,7 +25,7 @@ namespace EntityFrameworkOrnek
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Dersler> Dersler { get; set; }
+        public virtual DbSet<TBLOGRENCI> Dersler { get; set; }
         public virtual DbSet<TBLNOTLAR> TBLNOTLAR { get; set; }
         public virtual DbSet<TBLOGRENCI> TBLOGRENCI { get; set; }
     }

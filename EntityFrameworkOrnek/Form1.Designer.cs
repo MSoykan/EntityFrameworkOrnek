@@ -104,7 +104,7 @@
             this.BtnSil.TabIndex = 3;
             this.BtnSil.Text = "Sil";
             this.BtnSil.UseVisualStyleBackColor = true;
-            this.BtnSil.Click += new System.EventHandler(this.button2_Click);
+            this.BtnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // BtnGüncelle
             // 
@@ -114,7 +114,7 @@
             this.BtnGüncelle.TabIndex = 4;
             this.BtnGüncelle.Text = "Güncelle";
             this.BtnGüncelle.UseVisualStyleBackColor = true;
-            this.BtnGüncelle.Click += new System.EventHandler(this.button3_Click);
+            this.BtnGüncelle.Click += new System.EventHandler(this.BtnGuncelle_Click);
             // 
             // BtnBul
             // 
@@ -389,6 +389,7 @@
             this.BtnNotListesi.TabIndex = 25;
             this.BtnNotListesi.Text = "NotListesi";
             this.BtnNotListesi.UseVisualStyleBackColor = true;
+            this.BtnNotListesi.Click += new System.EventHandler(this.BtnNotListesi_Click);
             // 
             // Form1
             // 
