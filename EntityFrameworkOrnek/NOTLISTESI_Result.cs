@@ -10,20 +10,15 @@
 namespace EntityFrameworkOrnek
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class TBLNOTLAR
+    public partial class NOTLISTESI_Result
     {
         public int NOTID { get; set; }
-        public Nullable<int> OGR { get; set; }
-        public Nullable<int> DERS { get; set; }
+        public string AD_SOYAD { get; set; }
         public Nullable<short> SINAV1 { get; set; }
         public Nullable<short> SINAV2 { get; set; }
         public Nullable<short> SINAV3 { get; set; }
         public Nullable<decimal> ORTALAMA { get; set; }
         public Nullable<bool> DURUM { get; set; }
-    
-        public virtual Dersler Dersler { get; set; }
-        public virtual TBLOGRENCI TBLOGRENCI { get; set; }
     }
 }

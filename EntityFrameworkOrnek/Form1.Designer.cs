@@ -58,6 +58,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.BtnDersListesi = new System.Windows.Forms.Button();
             this.BtnNotListesi = new System.Windows.Forms.Button();
+            this.BtnProcedure = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.btnLinqEntity = new System.Windows.Forms.Button();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -124,6 +130,7 @@
             this.BtnBul.TabIndex = 5;
             this.BtnBul.Text = "Bul";
             this.BtnBul.UseVisualStyleBackColor = true;
+            this.BtnBul.Click += new System.EventHandler(this.BtnBul_Click);
             // 
             // groupBox1
             // 
@@ -180,6 +187,7 @@
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(172, 22);
             this.txtAd.TabIndex = 17;
+            this.txtAd.TextChanged += new System.EventHandler(this.txtAd_TextChanged);
             // 
             // label2
             // 
@@ -391,11 +399,81 @@
             this.BtnNotListesi.UseVisualStyleBackColor = true;
             this.BtnNotListesi.Click += new System.EventHandler(this.BtnNotListesi_Click);
             // 
+            // BtnProcedure
+            // 
+            this.BtnProcedure.Location = new System.Drawing.Point(13, 533);
+            this.BtnProcedure.Name = "BtnProcedure";
+            this.BtnProcedure.Size = new System.Drawing.Size(105, 41);
+            this.BtnProcedure.TabIndex = 26;
+            this.BtnProcedure.Text = "Prosedür";
+            this.BtnProcedure.UseVisualStyleBackColor = true;
+            this.BtnProcedure.Click += new System.EventHandler(this.BtnProcedure_Click);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(819, 12);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(164, 20);
+            this.radioButton1.TabIndex = 27;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Ada Göre Sırala(A-->Z)";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // btnLinqEntity
+            // 
+            this.btnLinqEntity.Location = new System.Drawing.Point(782, 486);
+            this.btnLinqEntity.Name = "btnLinqEntity";
+            this.btnLinqEntity.Size = new System.Drawing.Size(158, 41);
+            this.btnLinqEntity.TabIndex = 28;
+            this.btnLinqEntity.Text = "Linq Entity";
+            this.btnLinqEntity.UseVisualStyleBackColor = true;
+            this.btnLinqEntity.Click += new System.EventHandler(this.btnLinqEntity_Click);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(819, 38);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(164, 20);
+            this.radioButton2.TabIndex = 29;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Ada Göre Sırala(Z-->A)";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(819, 64);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(83, 20);
+            this.radioButton3.TabIndex = 30;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "İlk 3 Kayıt";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(819, 90);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(148, 20);
+            this.radioButton4.TabIndex = 31;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Id\'ye Göre Veri Getir";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1089, 674);
+            this.Controls.Add(this.radioButton4);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.btnLinqEntity);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.BtnProcedure);
             this.Controls.Add(this.BtnNotListesi);
             this.Controls.Add(this.BtnDersListesi);
             this.Controls.Add(this.groupBox3);
@@ -418,6 +496,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -458,6 +537,12 @@
         private System.Windows.Forms.Button BtnNotListesi;
         private System.Windows.Forms.Button btnHesapla;
         private System.Windows.Forms.Button btnSinavNotuGuncelle;
+        private System.Windows.Forms.Button BtnProcedure;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button btnLinqEntity;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
     }
 }
 
