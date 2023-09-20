@@ -39,8 +39,9 @@ namespace EntityFrameworkOrnek {
             var query = from item in db.TBLNOTLAR
                         select new {
                             item.NOTID,
-                            item.OGR,
-                            item.DERS,
+                            item.TBLOGRENCI.AD,
+                            item.TBLOGRENCI.SOYAD,
+                            item.Dersler.DERSADI,
                             item.SINAV1,
                             item.SINAV2,
                             item.SINAV3,
@@ -114,15 +115,15 @@ namespace EntityFrameworkOrnek {
 
             if (radioButton1.Checked == true) {
                 // Asc - Ascending
-                List<TBLOGRENCI> liste1 = db.TBLOGRENCI.OrderBy(p=>p.AD).ToList();
+                List<TBLOGRENCI> liste1 = db.TBLOGRENCI.OrderBy(p => p.AD).ToList();
                 dataGridView1.DataSource = liste1;
             }
-            if(radioButton2.Checked == true) {
+            if (radioButton2.Checked == true) {
                 // Desc - Descending
-                List<TBLOGRENCI> liste2 = db.TBLOGRENCI.OrderByDescending(p=>p.AD).ToList();
+                List<TBLOGRENCI> liste2 = db.TBLOGRENCI.OrderByDescending(p => p.AD).ToList();
                 dataGridView1.DataSource = liste2;
             }
-            if(radioButton3.Checked==true) {
+            if (radioButton3.Checked == true) {
                 List<TBLOGRENCI> liste3 = db.TBLOGRENCI.OrderBy(p => p.AD).Take(3).ToList();
                 dataGridView1.DataSource = liste3;
             }
@@ -130,6 +131,58 @@ namespace EntityFrameworkOrnek {
                 List<TBLOGRENCI> liste4 = db.TBLOGRENCI.Where(p => p.ID == 5).ToList();
                 dataGridView1.DataSource = liste4;
             }
+            if (radioButton5.Checked == true) {
+                List<TBLOGRENCI> liste5 = db.TBLOGRENCI.Where(p => p.AD.StartsWith("a")).ToList();
+                dataGridView1.DataSource = liste5;
+            }
+            if (radioButton6.Checked == true) {
+                List<TBLOGRENCI> liste6 = db.TBLOGRENCI.Where(p => p.AD.EndsWith("a")).ToList();
+                dataGridView1.DataSource = liste6;
+            }
+            if (radioButton7.Checked == true) {
+                bool deger = db.TBLKULUPLER.Any();
+                MessageBox.Show(deger.ToString(), "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (radioButton8.Checked == true) {
+                int toplam = db.TBLOGRENCI.Count();
+                MessageBox.Show(toplam.ToString(), "Toplam Öğrenci Sayısı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (radioButton9.Checked == true) {
+                var toplam = db.TBLNOTLAR.Sum(p => p.SINAV1);
+                MessageBox.Show("Toplam Sınav1 Puanı: " + toplam.ToString());
+            }
+            if (radioButton10.Checked == true) {
+                double ortalama = (double)db.TBLNOTLAR.Average(p => p.SINAV1);
+                ortalama = Math.Round(ortalama, 2);
+                MessageBox.Show("Birinci sınavın ortalaması: " + ortalama.ToString());
+            }
+            if (radioButton11.Checked == true) {
+                var enYüksek = db.TBLNOTLAR.Max(p => p.SINAV1);
+                MessageBox.Show("SINAV 1'IN En Yüksek Notu: " + enYüksek.ToString());
+            }
+
+        }
+
+        private void radioButton11_CheckedChanged(object sender, EventArgs e) {
+
+        }
+
+        private void BtnJoinIleGetir_Click(object sender, EventArgs e) {
+
+            var sorgu = from d1 in db.TBLNOTLAR
+                        join d2 in db.TBLOGRENCI
+                        on d1.OGR equals d2.ID
+                        join d3 in db.Dersler
+                        on d1.DERS equals d3.DERSID
+                        select new {
+                            ÖĞRENCİ = d2.AD,
+                            SOYAD = d2.SOYAD,
+                            SINAV1= d1.SINAV1,
+                            SINAV2 = d1.SINAV2,
+                            SINAV3 = d1.SINAV3,
+                            ORRRRRTALAMA = d1.ORTALAMA
+                        };
+            dataGridView1.DataSource = sorgu.ToList();
         }
     }
 }
